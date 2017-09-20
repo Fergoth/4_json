@@ -4,7 +4,7 @@ import sys
 
 def load_data(filepath):
     json_string = open(filepath, 'r').read()
-    return(json.loads(json_string))
+    return json.loads(json_string)
 
 
 def pretty_print_json(data):
@@ -13,5 +13,5 @@ def pretty_print_json(data):
 
 if __name__ == '__main__':
     path = sys.argv[1]
-    data = load_data(path)
-    pretty_print_json(data)
+    ugly_json = load_data(path)
+    pretty_print_json(ugly_json)
