@@ -1,26 +1,26 @@
 # Prettify JSON
-
-Cute JSON
-
-# Quickstart
-
-Example of script launch on Linux, Python 3.5:
+Import json string from file and output it to console in pretty format
 
 
-fergoth@fergoth-Lenovo-G50-45:~/dev/4_json$ python3 pprint_json.py 123.txt
-# TODO add output example
+#Examples
 
-[
-    "foo",
+
+$ python3 pprint_json.py 123.txt
+text in file : 
+{"foo":{"bar":["baz",null,1.0,2]}}
+
+# Output
     {
-        "bar": [
-            "baz",
-            null,
-            1.0,
-            2
-        ]
+        "foo": {
+            "bar": [
+                "baz",
+                null,
+                1.0,
+                2
+            ]
+        }
     }
-]
+
 # Project Goals
 
 The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)

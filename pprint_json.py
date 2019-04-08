@@ -3,12 +3,13 @@ import sys
 
 
 def load_data(filepath):
-    json_string = open(filepath, 'r').read()
-    return json.loads(json_string)
+    with open(filepath) as f:
+        json_string = f.read()
+        return json.loads(json_string)
 
 
-def pretty_print_json(ugly_json):
-    print(json.dumps(ugly_json, sort_keys=True, indent=4, ensure_ascii=False))
+def pretty_print_json(json_data):
+    print(json.dumps(json_data, sort_keys=True, indent=4, ensure_ascii=False))
 
 
 if __name__ == '__main__':
