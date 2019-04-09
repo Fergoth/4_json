@@ -5,6 +5,7 @@ import sys
 def load_data(filepath):
     with open(filepath) as f:
         json_string = f.read()
+        json.loads(json_string)
         return json.loads(json_string)
 
 
@@ -13,6 +14,14 @@ def pretty_print_json(json_data):
 
 
 if __name__ == '__main__':
-    path = sys.argv[1]
-    ugly_json = load_data(path)
-    pretty_print_json(ugly_json)
+    try:
+        path = sys.argv[1]
+        data_from_file = load_data(path)
+        pretty_print_json(data_from_file)
+    except IndexError:
+        print('Требуется путь к файлу как аргумент')
+    except FileNotFoundError:
+        print('Файл не найден')
+    except json.decoder.JSONDecodeError:
+        print('Файл содержит данные не в формате json')
+
