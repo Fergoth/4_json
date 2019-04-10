@@ -3,13 +3,14 @@ import sys
 
 
 def load_data(filepath):
-    with open(filepath) as f:
-        json_string = f.read()
+    with open(filepath) as file:
+        json_string = file.read()
         return json.loads(json_string)
 
 
-def pretty_print_decoded_json(json_data):
-    print(json.dumps(json_data, sort_keys=True, indent=4, ensure_ascii=False))
+def pretty_print_decoded_json(python_object):
+    print(
+        json.dumps(python_object, sort_keys=True, indent=4, ensure_ascii=False))
 
 
 if __name__ == '__main__':
@@ -23,4 +24,3 @@ if __name__ == '__main__':
         print('Файл не найден')
     except json.decoder.JSONDecodeError:
         print('Файл содержит данные не в формате json')
-
